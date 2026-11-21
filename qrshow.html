@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>mObywatel</title>
+    <link rel="stylesheet" href="assets/main.css">
+    <link rel="stylesheet" href="assets/qrshow.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.png">
+    <link rel="apple-touch-icon" href="assets/images/logo.png">
+    <link rel="shortcut icon" href="assets/images/logo.png">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, user-scalable=no">
+    <style>
+        .progress-container {
+            width: 70%;
+            height: 6px;
+            background-color: #e0e0e0;
+            border-radius: 3px;
+            overflow: hidden;
+            margin: 10px auto;
+        }
+        .progress-fill {
+            height: 100%;
+            background-color: #007aff;
+            width: 0%;
+        }
+    </style>
+</head>
+<body>
+    <div class="top_grid">
+        <div class="action_grid" onclick="sendTo('qr')">
+            <img src="assets/images/back_blue.png" class="back_img">
+        </div>
+        <p class="title_text">Kod QR</p>
+        <div></div>
+    </div>
+    <div class="container">
+        <div class="container">
+            <p class="description" style="
+    text-align: center; 
+    font-size: 25px; 
+    margin-top: 0; 
+    margin-bottom: 0; 
+    font-weight: 500; 
+    overflow-wrap: break-word; 
+    word-wrap: break-word;
+    white-space: normal;
+    max-width: 100%;
+">
+    Pokaż kod QR osobie, której dokument sprawdzasz
+</p>
+
+        <p class="subtext" style="text-align: center; color: gray; font-size:large">
+            Gdy ta osoba zeskanuje lub przepisze kod, zobaczysz jej dane na swoim telefonie.
+        </p>
+
+        <!-- QR Code Box -->
+        <div class="bottom_holder2" style="height: auto; margin-bottom: 20px; margin-top: 20px;">
+            <div class="bottom_update">
+                <div class="bottom_update_grid" style="flex-direction: column; align-items: center;">
+                    <img src="assets/images/qrcode.png" alt="Kod QR" 
+                    style="display: block; margin: 0 auto; width: 300px; height: 300px; margin-top: 50px">               
+                    <p id="random-code" style="text-align: center;font-size: 60px; margin-top: 10px; margin-bottom: 10px; font-weight: 425;"></p>
+                    <div class="progress-container">
+                        <div class="progress-fill" id="progress-bar"></div>
+                    </div>
+                    <p style="text-align: center; color: gray;">Kod wygaśnie za: <strong><span style="font-weight: 500; color: black;" id="countdown">2 min 59 sek.</span></strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+      <!-- Barcode Box -->
+  <div class="bottom_holder2" style="height: 100px; margin-bottom: 20px; margin-top: 0px; width: 410px">
+    <div class="bottom_update">
+      <div class="bottom_update_grid">
+
+        <div>
+          <img src="assets/images/qrcode.gif" style="height:75px; display: block; margin: auto; margin-top: 15px; ">
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- Barcode Box -->
+    <div class="bottom_holder2" style="height: 10px; margin-bottom: 20px; margin-top: 0px; width: fi;">
+        <div class="bottom_update">
+          <div class="bottom_update_grid">
+            <p class="bottom_update_text" style="margin-left: 0px;">Kod kreskowy</p>
+            <div style="margin-left: 0px;">
+              <img src="assets/images/qrcode.gif" alt="Kod kreskowy" style="height: 100px;" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="bottom_bar">
+        <div class="bottom_bar_grid">
+            <div class="bottom_element_grid" send="home">
+                <div class="bottom_element_image documents"></div>
+                <p class="bottom_element_text">Dokumenty</p>
+            </div>
+            <div class="bottom_element_grid" send="services">
+                <div class="bottom_element_image services"></div>
+                <p class="bottom_element_text">Usługi</p>
+            </div>
+            <div class="bottom_element_grid" send="qr">
+                <div class="bottom_element_image services qr_open"></div>
+                <p class="bottom_element_text open">Kod QR</p>
+            </div>
+                   <div class="bottom_element_grid" send="search">
+                   <div class="bottom_element_image search_nav"></div>
+                <p class="bottom_element_text">Szukaj</p>
+            </div>
+            <div class="bottom_element_grid" send="more">
+                <div class="bottom_element_image more"></div>
+                <p class="bottom_element_text">Więcej</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Generate random 6-digit code
+        const rawCode = Math.floor(100000 + Math.random() * 900000).toString();
+    
+        // Insert space between 3rd and 4th digit
+        const formattedCode = rawCode.slice(0, 3) + rawCode.slice(3);
+    
+        document.getElementById('random-code').textContent = formattedCode;
+    
+        // Countdown timer (2 min 30 sec)
+        const countdownElement = document.getElementById('countdown');
+        const progressBar = document.getElementById('progress-bar');
+        const totalSeconds = 178;
+        let elapsed = 0;
+    
+        function updateCountdown() {
+            if (elapsed > totalSeconds) return;
+    
+            const remaining = totalSeconds - elapsed;
+            const minutes = Math.floor(remaining / 60);
+            const seconds = remaining % 60;
+            countdownElement.textContent = `${minutes} min ${seconds < 10 ? '0' : ''}${seconds} sek.`;
+    
+            // Update progress bar
+            const percent = (elapsed / totalSeconds) * 100;
+            progressBar.style.width = `${percent}%`;
+    
+            elapsed++;
+        }
+    
+        setInterval(updateCountdown, 1000);
+    </script>
+    
+    <script src="assets/bar.js"></script>
+    <script src="assets/manifest.js"></script>
+</body>
+</html>

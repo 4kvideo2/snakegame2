@@ -1,0 +1,129 @@
+<head>
+    <title>mObywatel</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/card.css?v=1.0">
+    <link rel="stylesheet" href="assets/main.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.png">
+    <link rel="apple-touch-icon" href="assets/images/logo.png">
+    <link rel="shortcut icon" href="assets/images/logo.png">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+</head>
+<body>
+    <div class="top_grid">
+        <div class="action_grid">
+            <img src="assets/images/back_blue.png" class="back_img">
+            <p onclick="sendTo('home')" class="back_text">Wróć</p>
+        </div>
+        <p class="title_text">Legitymacja studecka</p>
+        <img src="assets/images/help.png" class="help_img">
+    </div>
+
+    <div class="bottom_bar">
+        <div class="bottom_bar_grid">
+            <div class="bottom_element_grid" send="home">
+                <div class="bottom_element_image documents_open"></div>
+                <p class="bottom_element_text_open">Dokumenty</p>
+            </div>
+            <div class="bottom_element_grid" send="services">
+                <div class="bottom_element_image services"></div>
+                <p class="bottom_element_text">Usłgi</p>
+            </div>
+            <div class="bottom_element_grid" send="qr">
+                <div class="bottom_element_image qr"></div>
+                <p class="bottom_element_text">Kod QR</p>
+            </div>
+            <div class="bottom_element_grid" send="search">
+                   <div class="bottom_element_image search_nav"></div>
+                <p class="bottom_element_text">Szukaj</p>
+            </div>
+            <div class="bottom_element_grid" send="more">
+                <div class="bottom_element_image more"></div>
+                <p class="bottom_element_text">Więcej</p>
+            </div>
+        </div>
+    </div>
+    <p class="time_text" id="time"></p>
+    <div class="id_image_data">
+        <img draggable="false" class="id_image" src="assets/images/plate_ss.png">
+        <div class="inset">
+
+        </div>
+        <div class="id_own_image" style="background-image: url('assets/images/QiaexgS.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+
+        <img src="assets/images/flag.gif" class="flag_video" style="margin-top: 5px;">
+        <img src="assets/images/eagle.gif" class="eagle_video">
+                <img src="assets/images/republic.png" class="eagle_text">
+
+        <div class="id_data_grid">
+            <div class="data_holder">
+                 <p class="data_title firstname" id="name">HEWEI</p>
+                <p class="data_value">Imię (imiona)</p>
+
+            </div>
+            <div class="data_holder">
+                <p class="data_title surname" id="surname">ZHANG</p>
+                <p class="data_value">Nazwisko</p>
+            </div>
+            <div class="data_holder">
+                <p class="data_title" id="nationality">28.09.2008</p>
+                <p class="data_value">Data urodzenia</p>
+            </div>
+            <div class="data_holder">
+                <p class="data_title" id="birthday">01.10.2025</p>
+                <p class="data_value">Data wydania</p>
+            </div>
+            <div class="data_holder">
+                <p class="data_title">UNIWERSYTET EKONOMICZNY W POZNANIU </p>
+                <p class="data_value">Nazwa uczelni</p>
+            </div>
+        </div>
+    </div>
+    <div class="id_bottom">
+        <div class="bottom_grid">
+            <img class="bottom_image" src="assets/images/valid.png">
+            <p class="bottom_text" style="color: #317C26; font-size: 17px;">Dokument ważny</p>
+        </div>
+    </div>
+
+
+    <img 
+    src="assets/images/image_bar.png" 
+    alt="Image"
+    style="width: 500px; max-width: 85%; height: auto; display: block; margin: 20px auto;"
+
+
+        </div>
+        <div class="bottom_holder info_holder">
+            <div class="bottom_grid">
+                <p class="bottom_text" style="color: #1f2125; margin-left: 0px;">Twoje dodatkowe dane</p>
+            </div>
+            <img class="action_arrow" src="assets/images/right_arrow.png">
+            <div class="additional_holder">
+                <div class="additional_grid">
+                    <p class="additional_title">Numer albumu</p>
+                    <p class="additional_subtitle">74381</p>
+                </div>
+                <div class="additional_grid">
+                    <p class="additional_title">Kod kreskowy</p>
+                    <img src="assets/images/kod_kreskowy.png"
+                        style="width: 600px; max-width: 100%; height: auto; display: block; margin-right: 0px auto; margin-top: 15px;"
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom_holder" style="height: 90px; margin-bottom: 120px;">
+            <div class="bottom_update">
+                <div class="bottom_update_grid">
+                    <p class="bottom_update_text" style="margin-left: 0px;">Ostatnia aktualizacja</p>
+                    <p class="bottom_update_value" style="margin-left: 0px;"></p>
+                </div>
+                <button class="main_button update">Aktualizuj</button>
+            </div>
+        </div>
+    </div>
+    <script src="assets/bar.js"></script>
+    <script src="assets/card.js"></script>
+    <script src="assets/manifest.js"></script>
+</body>

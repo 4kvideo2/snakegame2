@@ -1,0 +1,348 @@
+
+/* GENERAL */
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+
+    font-family: -apple-system, BlinkMacSystemFont,
+                 "SF Pro Display", "SF Pro Text",
+                 "Helvetica Neue", sans-serif;
+}
+
+body {
+    overflow-y: auto;
+    padding-bottom: 85px;
+}
+
+/* MAIN CONTAINER */
+
+.container {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* TOP SECTION */
+
+.top_grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.top_image {
+    width: 50px;
+    height: auto;
+}
+
+.right {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* DOCUMENTS SECTION */
+
+.card_grid {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    width: 100%;
+}
+
+.title {
+    font-size: 34px;
+    font-weight: 650;
+    margin: 0 0 8px 8px;
+
+    font-family: -apple-system, BlinkMacSystemFont,
+                 "SF Pro Display", sans-serif;
+}
+
+/* DOSTOSUJ AND DODAJ */
+
+.button_group {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: flex-end !important;
+    align-items: center;
+    align-self: stretch !important;
+
+    gap: 12px;
+    width: 100%;
+    margin: 2px 0 2px 0 !important;
+    padding: 0 8px 0 0;
+}
+
+.card_grid .button_group .main_button {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+
+    width: auto !important;
+    height: 24px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: #014a93 !important;
+
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    font-family: -apple-system, BlinkMacSystemFont,
+                 "SF Pro Text", sans-serif !important;
+    font-size: 14px;
+    font-weight: 400;
+
+    cursor: pointer;
+}
+
+/* HORIZONTAL CARD SCROLLING */
+
+.scroll-container {
+    display: flex;
+    gap: 16px;
+
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding: 8px 8px 12px;
+    margin: 0;
+
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* DOCUMENT CARD */
+
+.card {
+    display: block;
+    position: relative;
+    overflow: hidden;
+
+    width: 370px;
+    max-width: 100%;
+    height: 247px;
+
+    border-radius: 20px;
+    background-color: white;
+
+    text-decoration: none;
+    cursor: pointer;
+
+    scroll-snap-align: start;
+    flex: 0 0 auto;
+}
+
+.background {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-width: none;
+}
+
+/* DOCUMENT CARD BOTTOM */
+
+.id_bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+    width: 100%;
+    height: 60px;
+    background-color: white;
+}
+
+.name {
+    margin: auto 0 auto 20px;
+    height: max-content;
+
+    font-size: 16px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.human {
+    position: absolute;
+    top: 28px;
+    left: 28px;
+    width: 30px;
+}
+
+.arrow {
+    width: 20px !important;
+    margin: auto 15px auto auto !important;
+}
+
+/* SERVICES */
+
+.services_grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: max-content max-content;
+
+    width: 100%;
+    height: max-content;
+}
+
+.service_box {
+    width: max-content;
+    height: max-content;
+    margin: auto;
+}
+
+.service_box_icon {
+    display: block;
+
+    width: 80px;
+    height: 80px;
+    padding: 20px;
+
+    margin: 10px auto 0;
+
+    background-color: white;
+    border-radius: 20px;
+    object-fit: contain;
+}
+
+.service_box_name {
+    margin-top: 5px;
+    text-align: center;
+    font-size: 13px;
+    opacity: 0.5;
+}
+
+
+/* SF PRO */
+
+.card_grid,
+.card_grid .title,
+.card_grid .main_button,
+.card_grid .name,
+.card_grid p,
+.card_grid button {
+    font-family: -apple-system, BlinkMacSystemFont,
+                 "SF Pro Display", "SF Pro Text",
+                 sans-serif !important;
+}
+
+/* MOBILE */
+
+@media (max-width: 400px) {
+    .title {
+        font-size: 32px;
+    }
+
+    .card {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 370 / 247;
+    }
+
+    .button_group {
+        gap: 12px;
+    }
+}
+
+
+/* Remove lines under bottom navigation text */
+
+.bottom_bar a,
+.bottom_bar a:link,
+.bottom_bar a:visited,
+.bottom_bar a:hover,
+.bottom_bar a:active {
+    text-decoration: none !important;
+    color: inherit;
+}
+
+.bottom_element_text {
+    text-decoration: none !important;
+}
+
+
+
+/* MAIN CONTAINER */
+.container {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* TOP HEADER */
+.top_grid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 60px;
+
+    margin-top: 15px;
+    margin-bottom: -50px;
+
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* LOGO */
+.top_image {
+    display: block;
+    width: 50px;
+    height: auto;
+
+    margin-left: -2px;
+    margin-bottom: 10px;
+
+    flex-shrink: 0;
+}
+
+/* RIGHT ICONS */
+.top_icons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    margin-left: auto;
+    transform: translateY(-10px);
+}
+
+.top_icons img {
+    display: block;
+    width: 150px;
+    height: auto;
+
+    object-fit: contain;
+
+    margin-right: -6px;
+    margin-top: -3px;
+}
+
